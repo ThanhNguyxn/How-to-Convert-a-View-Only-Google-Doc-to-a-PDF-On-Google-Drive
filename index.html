@@ -179,6 +179,60 @@
         <div class="warning">
             <strong>Lưu ý:</strong> Các công cụ này được thiết kế cho mục đích sử dụng cá nhân hợp pháp, chẳng hạn như tạo bản sao ngoại tuyến của tài liệu mà bạn có quyền truy cập.
         </div>
+
+        <!-- Thêm hướng dẫn căn bản cho người mới -->
+        <div style="background-color: #e8f5e9; border: 2px solid #4caf50; padding: 15px; margin: 20px 0; border-radius: 8px;">
+            <h3 style="color: #2e7d32; margin-top: 0;">🔰 Hướng Dẫn Căn Bản Cho Người Mới</h3>
+            <p>Chào bạn! Nếu bạn không quen với công nghệ, đừng lo lắng. Dưới đây là những điều cơ bản bạn cần biết:</p>
+            
+            <div style="display: flex; margin-bottom: 15px;">
+                <div style="background-color: #f5f5f5; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold;">1</div>
+                <div>
+                    <strong>Tải xuống là gì?</strong> 
+                    <p>Khi bạn nhấp vào nút "Tải Script" hoặc "Tải Mã", máy tính sẽ lưu một tệp vào thư mục "Downloads" trên máy tính của bạn.</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; margin-bottom: 15px;">
+                <div style="background-color: #f5f5f5; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold;">2</div>
+                <div>
+                    <strong>Phím F12 ở đâu?</strong>
+                    <p>Phím F12 nằm ở hàng phím trên cùng của bàn phím. Nếu không tìm thấy, bạn có thể nhấp chuột phải vào trang web và chọn "Kiểm tra" hoặc "Inspect".</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; margin-bottom: 15px;">
+                <div style="background-color: #f5f5f5; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold;">3</div>
+                <div>
+                    <strong>Console là gì?</strong>
+                    <p>Console là một tab trong Developer Tools (hiện ra sau khi nhấn F12). Đây là nơi bạn sẽ dán mã để chuyển đổi tài liệu.</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; margin-bottom: 15px;">
+                <div style="background-color: #f5f5f5; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold;">4</div>
+                <div>
+                    <strong>Notepad là gì?</strong>
+                    <p>Notepad là chương trình đơn giản để mở và đọc tệp văn bản. Bạn có thể mở Notepad bằng cách nhấp chuột phải vào tệp > Chọn "Open with" > Chọn "Notepad".</p>
+                </div>
+            </div>
+            
+            <div style="display: flex;">
+                <div style="background-color: #f5f5f5; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold;">5</div>
+                <div>
+                    <strong>Tổ hợp phím:</strong>
+                    <ul style="margin-top: 5px;">
+                        <li><strong>Ctrl+A</strong>: Chọn tất cả văn bản</li>
+                        <li><strong>Ctrl+C</strong>: Sao chép văn bản đã chọn</li>
+                        <li><strong>Ctrl+V</strong>: Dán văn bản đã sao chép</li>
+                        <li><strong>Ctrl+P</strong>: Mở hộp thoại in</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="margin-top: 15px;"><strong>💡 Mẹo:</strong> Nếu bạn là người mới, hãy thử phương pháp "Bookmarklet" (Phương pháp 3) - đây là cách đơn giản nhất!</p>
+        </div>
+        
         <h2>Các Công Cụ Có Sẵn</h2>
     </div>
 
@@ -237,11 +291,11 @@
                 <h4>How to use:</h4>
                 <ol>
                     <li>Open the view-only Google Doc in your browser</li>
-                    <li>Scroll through the entire document to ensure all pages are loaded</li>
-                    <li>Press F12 or right-click and select "Inspect" to open Developer Tools</li>
-                    <li>Click on the "Console" tab</li>
-                    <li>Copy and paste the code from the downloaded script</li>
-                    <li>Press Enter to execute and download the PDF</li>
+                    <li>Scroll through the entire document from top to bottom to make sure everything loads</li>
+                    <li>Press F12 (or right-click anywhere and select "Inspect" from the menu)</li>
+                    <li>When a new panel opens, click on "Console" at the top</li>
+                    <li>Copy the code from the downloaded script file and paste it into the Console</li>
+                    <li>Press Enter and wait a few seconds for your PDF to download automatically!</li>
                 </ol>
             </div>
         </div>
@@ -260,12 +314,31 @@
                 <h4>Cách sử dụng:</h4>
                 <ol>
                     <li>Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
-                    <li>Cuộn qua toàn bộ tài liệu để đảm bảo tất cả các trang được tải</li>
-                    <li>Nhấn F12 hoặc nhấp chuột phải và chọn "Kiểm tra" để mở Công Cụ Phát Triển</li>
-                    <li>Nhấp vào tab "Console"</li>
-                    <li>Sao chép và dán mã từ script đã tải xuống</li>
-                    <li>Nhấn Enter để thực thi và tải xuống PDF</li>
+                    <li>Cuộn qua toàn bộ tài liệu từ trên xuống dưới để đảm bảo tất cả được tải</li>
+                    <li>Nhấn phím F12 (hoặc nhấp chuột phải và chọn "Kiểm tra" từ menu)</li>
+                    <li>Khi một bảng mới mở ra, nhấp vào "Console" ở phía trên</li>
+                    <li>Sao chép mã từ tệp script đã tải xuống và dán vào Console</li>
+                    <li>Nhấn Enter và đợi vài giây để PDF của bạn tự động tải xuống!</li>
                 </ol>
+
+                <h4>Cách sử dụng (hướng dẫn chi tiết):</h4>
+                <ol>
+                    <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox</li>
+                    <li><strong>Bước 2:</strong> Cuộn qua toàn bộ tài liệu từ trên xuống dưới để đảm bảo tất cả được tải (cuộn chậm qua mỗi trang)</li>
+                    <li><strong>Bước 3:</strong> Nhấn phím F12 trên bàn phím (đó là phím chức năng F12 ở hàng phím trên cùng)</li>
+                    <li><strong>Bước 4:</strong> Khi một cửa sổ mới hiện ra bên phải màn hình, nhấp vào tab "Console" ở hàng trên cùng của cửa sổ đó</li>
+                    <li><strong>Bước 5:</strong> 
+                        <ul>
+                            <li>Trước tiên, nhấp vào nút "Tải Script" ở trên</li>
+                            <li>Mở file script.js đã tải về bằng Notepad hoặc bất kỳ trình soạn thảo văn bản nào</li>
+                            <li>Chọn tất cả nội dung trong file (Ctrl+A), sau đó sao chép (Ctrl+C)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 6:</strong> Quay lại tab Console, nhấp vào vùng trống và dán mã (Ctrl+V)</li>
+                    <li><strong>Bước 7:</strong> Nhấn Enter và đợi vài giây</li>
+                    <li><strong>Bước 8:</strong> Trình duyệt sẽ tự động tải xuống tệp PDF của bạn. Tìm nó trong thư mục Downloads trên máy tính của bạn.</li>
+                </ol>
+                <p><em>Lưu ý: Nếu bạn không thấy tab Console, hãy nhấp vào dấu >> ở hàng trên cùng để hiển thị tất cả các tab.</em></p>
             </div>
         </div>
         
@@ -283,11 +356,11 @@
                 <h4>Comment utiliser:</h4>
                 <ol>
                     <li>Ouvrez le Google Doc en lecture seule dans votre navigateur</li>
-                    <li>Faites défiler tout le document pour vous assurer que toutes les pages sont chargées</li>
-                    <li>Appuyez sur F12 ou faites un clic droit et sélectionnez "Inspecter" pour ouvrir les Outils de Développement</li>
-                    <li>Cliquez sur l'onglet "Console"</li>
-                    <li>Copiez et collez le code du script téléchargé</li>
-                    <li>Appuyez sur Entrée pour exécuter et télécharger le PDF</li>
+                    <li>Faites défiler tout le document de haut en bas pour vous assurer que tout se charge</li>
+                    <li>Appuyez sur F12 (ou faites un clic droit et sélectionnez "Inspecter" dans le menu)</li>
+                    <li>Lorsqu'un nouveau panneau s'ouvre, cliquez sur "Console" en haut</li>
+                    <li>Copiez le code du fichier script téléchargé et collez-le dans la Console</li>
+                    <li>Appuyez sur Entrée et attendez quelques secondes pour que votre PDF se télécharge automatiquement !</li>
                 </ol>
             </div>
         </div>
@@ -306,11 +379,11 @@
                 <h4>Cómo usar:</h4>
                 <ol>
                     <li>Abra el Google Doc de solo lectura en su navegador</li>
-                    <li>Desplácese por todo el documento para asegurarse de que se carguen todas las páginas</li>
-                    <li>Presione F12 o haga clic derecho y seleccione "Inspeccionar" para abrir las Herramientas de Desarrollo</li>
-                    <li>Haga clic en la pestaña "Consola"</li>
-                    <li>Copie y pegue el código del script descargado</li>
-                    <li>Presione Enter para ejecutar y descargar el PDF</li>
+                    <li>Desplácese por todo el documento de arriba a abajo para asegurarse de que todo se cargue</li>
+                    <li>Presione F12 (o haga clic derecho y seleccione "Inspeccionar" en el menú)</li>
+                    <li>Cuando se abra un nuevo panel, haga clic en "Consola" en la parte superior</li>
+                    <li>Copie el código del archivo script descargado y péguelo en la Consola</li>
+                    <li>Presione Enter y espere unos segundos para que su PDF se descargue automáticamente!</li>
                 </ol>
             </div>
         </div>
@@ -329,11 +402,11 @@
                 <h4>使用方法：</h4>
                 <ol>
                     <li>在浏览器中打开只读 Google Doc</li>
-                    <li>滚动浏览整个文档以确保加载所有页面</li>
-                    <li>按 F12 或右键单击并选择"检查"以打开开发者工具</li>
-                    <li>点击"控制台"选项卡</li>
-                    <li>复制并粘贴下载的脚本代码</li>
-                    <li>按 Enter 执行并下载 PDF</li>
+                    <li>从上到下滚动浏览整个文档，确保所有内容都加载完毕</li>
+                    <li>按 F12 键（或右键单击并从菜单中选择"检查"）</li>
+                    <li>当新面板打开时，点击顶部的"控制台"</li>
+                    <li>复制下载的脚本文件中的代码并粘贴到控制台中</li>
+                    <li>按 Enter 键，等待几秒钟，您的 PDF 将自动下载！</li>
                 </ol>
             </div>
         </div>
@@ -355,11 +428,12 @@
                 <h4>How to use:</h4>
                 <ol>
                     <li>Open the view-only Google Doc in your browser</li>
-                    <li>Zoom in for better quality (Ctrl/Cmd +)</li>
-                    <li>Scroll through the entire document to load all pages</li>
-                    <li>Open Developer Tools (F12) and go to Console tab</li>
-                    <li>Copy and paste the high-resolution script</li>
-                    <li>Wait for the processing to complete (may take longer)</li>
+                    <li>Use Ctrl/Cmd + "+" to zoom in for better quality (2-3 times)</li>
+                    <li>Scroll slowly through the entire document from top to bottom</li>
+                    <li>Press F12 (or right-click anywhere and select "Inspect")</li>
+                    <li>Click on "Console" at the top of the new panel</li>
+                    <li>Copy and paste the high-resolution script into the Console</li>
+                    <li>Press Enter and wait patiently - this will take longer but give better quality!</li>
                 </ol>
             </div>
         </div>
@@ -378,12 +452,39 @@
                 <h4>Cách sử dụng:</h4>
                 <ol>
                     <li>Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
-                    <li>Phóng to để có chất lượng tốt hơn (Ctrl/Cmd +)</li>
-                    <li>Cuộn qua toàn bộ tài liệu để tải tất cả các trang</li>
-                    <li>Mở Developer Tools (F12) và chuyển đến tab Console</li>
-                    <li>Sao chép và dán mã script độ phân giải cao</li>
-                    <li>Đợi quá trình xử lý hoàn tất (có thể mất nhiều thời gian hơn)</li>
+                    <li>Sử dụng Ctrl/Cmd + "+" để phóng to để có chất lượng tốt hơn (2-3 lần)</li>
+                    <li>Cuộn chậm qua toàn bộ tài liệu từ trên xuống dưới</li>
+                    <li>Nhấn phím F12 (hoặc nhấp chuột phải và chọn "Kiểm tra")</li>
+                    <li>Nhấp vào "Console" ở phía trên của bảng mới</li>
+                    <li>Sao chép và dán mã script độ phân giải cao vào Console</li>
+                    <li>Nhấn Enter và chờ đợi kiên nhẫn - quá trình này sẽ mất nhiều thời gian hơn nhưng cho chất lượng tốt hơn!</li>
                 </ol>
+
+                <h4>Cách sử dụng (hướng dẫn chi tiết):</h4>
+                <ol>
+                    <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox</li>
+                    <li><strong>Bước 2:</strong> Phóng to tài liệu để có chất lượng cao hơn bằng cách:
+                        <ul>
+                            <li>Nhấn và giữ phím Ctrl trên bàn phím</li>
+                            <li>Đồng thời nhấn phím + (dấu cộng) 2-3 lần</li>
+                            <li>Bạn sẽ thấy tài liệu phóng to hơn</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 3:</strong> Cuộn THẬT CHẬM qua toàn bộ tài liệu từ trên xuống dưới, đảm bảo mỗi trang đều được tải hoàn toàn</li>
+                    <li><strong>Bước 4:</strong> Nhấn phím F12 trên bàn phím</li>
+                    <li><strong>Bước 5:</strong> Khi một cửa sổ mới hiện ra bên phải màn hình, nhấp vào tab "Console" ở hàng trên cùng</li>
+                    <li><strong>Bước 6:</strong> 
+                        <ul>
+                            <li>Nhấp vào nút "Tải Script" ở trên để tải về file high_res_script.js</li>
+                            <li>Mở file đã tải bằng Notepad hoặc bất kỳ trình soạn thảo văn bản nào</li>
+                            <li>Chọn tất cả văn bản (Ctrl+A), sau đó sao chép (Ctrl+C)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 7:</strong> Quay lại tab Console, nhấp vào vùng trống và dán mã đã sao chép (Ctrl+V)</li>
+                    <li><strong>Bước 8:</strong> Nhấn Enter và đợi - quá trình này sẽ mất nhiều thời gian hơn phương pháp 1 (từ 30 giây đến vài phút tùy thuộc vào độ dài của tài liệu)</li>
+                    <li><strong>Bước 9:</strong> Trình duyệt sẽ tự động tải xuống tệp PDF. Kiểm tra thư mục Downloads trên máy tính của bạn.</li>
+                </ol>
+                <p><em>Lưu ý: Phương pháp này tạo ra PDF chất lượng cao hơn nhưng mất nhiều thời gian hơn. Hãy kiên nhẫn chờ đợi.</em></p>
             </div>
         </div>
         
@@ -401,11 +502,12 @@
                 <h4>Comment utiliser:</h4>
                 <ol>
                     <li>Ouvrez le Google Doc en lecture seule dans votre navigateur</li>
-                    <li>Zoomez pour une meilleure qualité (Ctrl/Cmd +)</li>
-                    <li>Faites défiler tout le document pour charger toutes les pages</li>
-                    <li>Ouvrez les Outils de Développement (F12) et allez à l'onglet Console</li>
-                    <li>Copiez et collez le script haute résolution</li>
-                    <li>Attendez que le traitement soit terminé (peut prendre plus de temps)</li>
+                    <li>Utilisez Ctrl/Cmd + "+" pour zoomer pour une meilleure qualité (2-3 fois)</li>
+                    <li>Faites défiler lentement tout le document de haut en bas</li>
+                    <li>Appuyez sur F12 (ou faites un clic droit et sélectionnez "Inspecter")</li>
+                    <li>Cliquez sur "Console" en haut du nouveau panneau</li>
+                    <li>Copiez et collez le script haute résolution dans la Console</li>
+                    <li>Appuyez sur Entrée et attendez patiemment - cela prendra plus de temps mais donnera une meilleure qualité !</li>
                 </ol>
             </div>
         </div>
@@ -424,11 +526,12 @@
                 <h4>Cómo usar:</h4>
                 <ol>
                     <li>Abra el Google Doc de solo lectura en su navegador</li>
-                    <li>Aumente el zoom para mejor calidad (Ctrl/Cmd +)</li>
-                    <li>Desplácese por todo el documento para cargar todas las páginas</li>
-                    <li>Abra las Herramientas de Desarrollo (F12) y vaya a la pestaña Consola</li>
-                    <li>Copie y pegue el script de alta resolución</li>
-                    <li>Espere a que se complete el procesamiento (puede tardar más)</li>
+                    <li>Use Ctrl/Cmd + "+" para aumentar el zoom para mejor calidad (2-3 veces)</li>
+                    <li>Desplácese lentamente por todo el documento de arriba a abajo</li>
+                    <li>Presione F12 (o haga clic derecho y seleccione "Inspeccionar")</li>
+                    <li>Haga clic en "Consola" en la parte superior del nuevo panel</li>
+                    <li>Copie y pegue el script de alta resolución en la Consola</li>
+                    <li>Presione Enter y espere pacientemente - esto tomará más tiempo pero dará mejor calidad!</li>
                 </ol>
             </div>
         </div>
@@ -447,11 +550,12 @@
                 <h4>使用方法：</h4>
                 <ol>
                     <li>在浏览器中打开只读 Google Doc</li>
-                    <li>放大以获得更好的质量 (Ctrl/Cmd +)</li>
-                    <li>滚动浏览整个文档以加载所有页面</li>
-                    <li>打开开发者工具 (F12) 并转到控制台选项卡</li>
-                    <li>复制并粘贴高分辨率脚本</li>
-                    <li>等待处理完成（可能需要更长时间）</li>
+                    <li>使用 Ctrl/Cmd + "+" 放大以获得更好的质量（2-3次）</li>
+                    <li>从上到下慢慢滚动浏览整个文档</li>
+                    <li>按 F12 键（或右键单击并选择"检查"）</li>
+                    <li>点击新面板顶部的"控制台"</li>
+                    <li>复制并粘贴高分辨率脚本到控制台中</li>
+                    <li>按 Enter 键并耐心等待 - 这将需要更长时间但会提供更好的质量！</li>
                 </ol>
             </div>
         </div>
@@ -498,6 +602,40 @@
                     <li>Thay vì URL, dán toàn bộ mã từ tệp bookmarklet</li>
                     <li>Khi xem Google Doc, nhấp vào bookmark để chuyển đổi</li>
                 </ol>
+
+                <h4>Hướng Dẫn Cài Đặt (chi tiết):</h4>
+                <ol>
+                    <li><strong>Bước 1:</strong> Đầu tiên, hãy bật thanh bookmark trong trình duyệt:
+                        <ul>
+                            <li>Trong Chrome: Nhấp vào ba chấm ở góc trên bên phải > Chọn Bookmarks > Hiển thị thanh bookmark</li>
+                            <li>Trong Firefox: Nhấp chuột phải vào thanh trên cùng > Chọn Thanh Bookmark</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 2:</strong> Nhấp vào nút "Tải Mã Bookmarklet" ở trên để tải tệp bookmarklet.js</li>
+                    <li><strong>Bước 3:</strong> Mở tệp vừa tải về bằng Notepad (nhấp chuột phải vào tệp > Chọn Open with > Notepad)</li>
+                    <li><strong>Bước 4:</strong> Chọn và sao chép tất cả nội dung trong tệp (Ctrl+A để chọn tất cả, sau đó Ctrl+C để sao chép)</li>
+                    <li><strong>Bước 5:</strong> Tạo bookmark mới:
+                        <ul>
+                            <li>Nhấp chuột phải vào thanh bookmark > Chọn "Thêm trang" hoặc "Add page"</li>
+                            <li>Hoặc bạn cũng có thể nhấn Ctrl+D để mở hộp thoại thêm bookmark</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 6:</strong> Trong hộp thoại bookmark:
+                        <ul>
+                            <li>Đặt tên là "Lưu Google Doc sang PDF" (hoặc bất kỳ tên nào bạn dễ nhớ)</li>
+                            <li>Trong trường URL hoặc địa chỉ, xóa nội dung hiện tại và dán mã bạn đã sao chép (Ctrl+V)</li>
+                            <li>Nhấp "Lưu" hoặc "Save"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 7:</strong> Bây giờ, mỗi khi bạn đang xem một Google Doc:
+                        <ul>
+                            <li>Đảm bảo bạn đã cuộn qua toàn bộ tài liệu một lần</li>
+                            <li>Nhấp vào bookmark "Lưu Google Doc sang PDF" bạn vừa tạo</li>
+                            <li>Tài liệu PDF sẽ được tạo và tải xuống tự động</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><em>Lưu ý: Đây là phương pháp đơn giản nhất vì bạn chỉ cần cài đặt một lần và sau đó có thể dùng lại nhiều lần chỉ với một cú nhấp chuột.</em></p>
             </div>
         </div>
         
@@ -608,6 +746,35 @@
                     <li>Sao chép và dán mã trích xuất hình ảnh</li>
                     <li>Mỗi trang sẽ được tải xuống dưới dạng tệp PNG riêng biệt</li>
                 </ol>
+
+                <h4>Cách sử dụng (hướng dẫn chi tiết):</h4>
+                <ol>
+                    <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox</li>
+                    <li><strong>Bước 2:</strong> Cuộn chậm qua toàn bộ tài liệu từ đầu đến cuối để đảm bảo tất cả các trang đều được tải hoàn toàn</li>
+                    <li><strong>Bước 3:</strong> Mở Developer Tools bằng cách nhấn phím F12 trên bàn phím</li>
+                    <li><strong>Bước 4:</strong> Trong bảng điều khiển mới hiện ra, nhấp vào tab "Console" ở hàng trên cùng
+                        <ul>
+                            <li>Nếu bạn không thấy tab Console, hãy nhấp vào biểu tượng >> để hiển thị thêm tab</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 5:</strong> Tải script bằng cách:
+                        <ul>
+                            <li>Nhấp vào nút "Tải Script" ở trên</li>
+                            <li>Tìm file image_extractor.js trong thư mục Downloads</li>
+                            <li>Mở file bằng Notepad (nhấp chuột phải > Open with > Notepad)</li>
+                            <li>Chọn tất cả nội dung (Ctrl+A) và sao chép (Ctrl+C)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 6:</strong> Quay lại tab Console trong trình duyệt, nhấp vào vùng trống, và dán mã vừa sao chép (Ctrl+V)</li>
+                    <li><strong>Bước 7:</strong> Nhấn Enter và đợi trong khi script chạy</li>
+                    <li><strong>Bước 8:</strong> Trình duyệt sẽ tải xuống mỗi trang dưới dạng một file PNG riêng biệt
+                        <ul>
+                            <li>Bạn có thể được yêu cầu cho phép tải nhiều file cùng lúc - hãy nhấp "Allow" hoặc "Cho phép"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bước 9:</strong> Kiểm tra thư mục Downloads để tìm tất cả các tệp hình ảnh</li>
+                </ol>
+                <p><em>Lưu ý: Phương pháp này tạo ra nhiều file hình ảnh riêng biệt thay vì một tệp PDF duy nhất. Đây là cách tốt nhất để có được chất lượng cao nhất.</em></p>
             </div>
         </div>
         
@@ -727,6 +894,17 @@
                 <li>Nhấp vào "Lưu"</li>
             </ol>
             <p><em>Lưu ý: Phương pháp này có thể bị chặn trong các tài liệu có tính năng in bị vô hiệu hóa.</em></p>
+
+            <p>Cho các tài liệu có cài đặt ít hạn chế hơn.</p>
+            <ol>
+                <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
+                <li><strong>Bước 2:</strong> Nhấn tổ hợp phím Ctrl + P (trên Windows) hoặc Cmd + P (trên Mac)</li>
+                <li><strong>Bước 3:</strong> Một cửa sổ in sẽ xuất hiện. Trong cửa sổ này, tìm phần "Đích" hoặc "Destination" (thường ở phía trên cùng)</li>
+                <li><strong>Bước 4:</strong> Nhấp vào menu thả xuống "Đích" và chọn "Lưu dưới dạng PDF" hoặc "Save as PDF"</li>
+                <li><strong>Bước 5:</strong> Nhấp vào nút "Lưu" hoặc "Save" ở góc dưới</li>
+                <li><strong>Bước 6:</strong> Chọn vị trí lưu file trên máy tính của bạn, đặt tên file nếu cần và nhấn "Lưu"</li>
+            </ol>
+            <p><em>Lưu ý: Phương pháp này chỉ hoạt động nếu chủ sở hữu tài liệu không tắt tính năng in. Nếu bạn không thấy tùy chọn in khi nhấn Ctrl+P, điều đó có nghĩa là tính năng in đã bị vô hiệu hóa và bạn cần sử dụng một trong các phương pháp khác.</em></p>
         </div>
         
         <!-- French -->
@@ -800,6 +978,28 @@
                 <li>Mở tệp HTML trong trình duyệt của bạn</li>
                 <li>In sang PDF (Ctrl/Cmd + P)</li>
             </ol>
+
+            <p>Sử dụng chế độ xem di động của Google để vượt qua một số hạn chế.</p>
+            <ol>
+                <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
+                <li><strong>Bước 2:</strong> Nhìn vào thanh địa chỉ (URL) ở trên cùng trình duyệt. URL sẽ có dạng tương tự như:
+                    <p style="background-color: #f5f5f5; padding: 5px; font-family: monospace;">https://docs.google.com/document/d/XXXXXXXXXXXX/edit</p>
+                </li>
+                <li><strong>Bước 3:</strong> Nhấp vào thanh địa chỉ, và sửa phần cuối URL:
+                    <ul>
+                        <li>Tìm từ "edit" ở cuối URL</li>
+                        <li>Xóa từ "edit" và thay thế bằng "mobilebasic"</li>
+                        <li>URL mới sẽ có dạng: <p style="background-color: #f5f5f5; padding: 5px; font-family: monospace;">https://docs.google.com/document/d/XXXXXXXXXXXX/mobilebasic</p></li>
+                    </ul>
+                </li>
+                <li><strong>Bước 4:</strong> Sau khi sửa URL, nhấn Enter để tải trang mới</li>
+                <li><strong>Bước 5:</strong> Trang sẽ tải với định dạng đơn giản hơn. Nhấp chuột phải vào bất kỳ đâu trên trang và chọn "Lưu dưới dạng..." hoặc "Save as..."</li>
+                <li><strong>Bước 6:</strong> Trong hộp thoại lưu, chọn "Trang web, Chỉ HTML" hoặc "Webpage, HTML Only" từ menu thả xuống</li>
+                <li><strong>Bước 7:</strong> Chọn nơi lưu file và nhấn nút "Lưu"</li>
+                <li><strong>Bước 8:</strong> Sau khi lưu, tìm và mở file HTML đã lưu bằng trình duyệt của bạn</li>
+                <li><strong>Bước 9:</strong> Nhấn Ctrl+P để mở hộp thoại in, chọn "Lưu dưới dạng PDF" và lưu file PDF</li>
+            </ol>
+            <p><em>Lưu ý: Phương pháp này đặc biệt hữu ích khi các phương pháp khác không hoạt động. Nó chuyển đổi tài liệu sang định dạng đơn giản hơn trước khi lưu.</em></p>
         </div>
         
         <!-- French -->
@@ -877,6 +1077,36 @@
                 <li>Chọn vị trí lưu của bạn và nhấp vào "Lưu"</li>
             </ol>
             <p><em>Lưu ý: Phương pháp này chỉ hoạt động nếu chủ sở hữu tài liệu đã cho phép tải xuống HTML.</em></p>
+
+            <p>Đối với các tài liệu cho phép tải xuống HTML:</p>
+            <ol>
+                <li><strong>Bước 1:</strong> Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
+                <li><strong>Bước 2:</strong> Kiểm tra xem tài liệu có cho phép tải xuống hay không bằng cách:
+                    <ul>
+                        <li>Nhấp vào menu "Tệp" hoặc "File" ở góc trên bên trái của Google Docs</li>
+                        <li>Xem có tùy chọn "Tải xuống" hoặc "Download" không</li>
+                    </ul>
+                </li>
+                <li><strong>Bước 3:</strong> Nếu có, hãy nhấp vào "Tải xuống" > "Trang web (.html, nén)" hoặc "Download" > "Web Page (.html, zipped)"</li>
+                <li><strong>Bước 4:</strong> Một file ZIP sẽ được tải xuống. Tìm file trong thư mục Downloads của bạn</li>
+                <li><strong>Bước 5:</strong> Giải nén file ZIP bằng cách:
+                    <ul>
+                        <li>Nhấp chuột phải vào file ZIP</li>
+                        <li>Chọn "Giải nén" hoặc "Extract All"</li>
+                        <li>Làm theo hướng dẫn để giải nén đến một thư mục</li>
+                    </ul>
+                </li>
+                <li><strong>Bước 6:</strong> Mở thư mục giải nén và tìm file HTML (thường có tên giống với tên tài liệu gốc)</li>
+                <li><strong>Bước 7:</strong> Nhấp đúp vào file HTML để mở nó trong trình duyệt mặc định của bạn</li>
+                <li><strong>Bước 8:</strong> Khi file HTML được mở trong trình duyệt:
+                    <ul>
+                        <li>Nhấn Ctrl+P (Windows) hoặc Cmd+P (Mac)</li>
+                        <li>Trong hộp thoại in, chọn "Lưu dưới dạng PDF" từ menu "Đích" hoặc "Destination"</li>
+                        <li>Nhấp vào "Lưu" và chọn vị trí để lưu file PDF</li>
+                    </ul>
+                </li>
+            </ol>
+            <p><em>Lưu ý: Phương pháp này chỉ hoạt động nếu chủ sở hữu tài liệu đã cho phép tải xuống HTML. Nếu bạn không thấy tùy chọn "Tải xuống", hãy thử các phương pháp khác.</em></p>
         </div>
         
         <!-- French -->

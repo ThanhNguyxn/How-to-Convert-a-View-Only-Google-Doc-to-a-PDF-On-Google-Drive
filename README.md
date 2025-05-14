@@ -1,98 +1,90 @@
 # How to Convert a View-Only Google Doc to a PDF On Google Drive
 
-Greetings! In this Google Drive tutorial, we shall be looking at how to download a view-only and protected Google Doc on Google Drive as a PDF. This tutorial is particularly useful if you have view-only access to a Google Doc file but want to download it as a PDF to have a local copy of that document.
+This guide provides tools to convert view-only Google Docs to PDF format. Choose the method that works best for your specific document and requirements.
 
-This guide will show you how to download a view-only Google Doc from Google Drive as a PDF file. While the original document is in Google Doc format, we'll convert it to a PDF that preserves all the contents. We'll use a combination of methods including downloading as HTML and then converting to PDF via a web browser.
+**Note:** These tools are intended for legitimate personal use, such as creating offline copies of documents you have access to.
 
-This repository provides multiple methods to download and convert view-only Google Docs to PDF format, even when direct downloading is disabled or restricted.
+## Languages / Ngôn ngữ
 
-## Table of Contents
-- [Overview](#overview)
-- [Scripts Available](#scripts-available)
-- [Method 1: Using JavaScript (Console Method)](#method-1-using-javascript-console-method)
-- [Method 2: Using Print to PDF](#method-2-using-print-to-pdf)
-- [Method 3: Using Mobile Basic View](#method-3-using-mobile-basic-view)
-- [Method 4: Using HTML Download and Convert](#method-4-using-html-download-and-convert)
-- [Step-by-Step Visual Guide](#step-by-step-visual-guide)
-- [Tips and Troubleshooting](#tips-and-troubleshooting)
-- [Multilingual Support](#multilingual-support)
-- [Contributing](#contributing)
-- [License](#license)
-- [Credits](#credits)
+- **English** (default)
+- **Tiếng Việt** - [Xem hướng dẫn tiếng Việt ở đây](#vietnamese)
+- **Français** - [Voir le guide en français](#french)
+- **Español** - [Ver guía en español](#spanish)
+- **中文** - [查看中文指南](#chinese)
 
-## Overview
+## Available Tools
 
-Google Docs allows users to restrict downloading, printing, and copying content by setting documents to "View only" mode. However, there are legitimate scenarios where you may need to download a document for offline access, such as:
+### 1. Standard PDF Converter
 
-- Reading documents on devices without internet access
-- Creating personal backups of important information
-- Converting documents to PDF for better compatibility across devices
+Basic tool to convert a view-only Google Doc to PDF.
 
-This repository provides several methods to convert these view-only Google Docs to PDF format.
+- Fast conversion
+- Works with most view-only documents
+- Standard quality output
 
-## Scripts Available
-
-This repository contains multiple scripts for different use cases:
-
-1. **[script.js](script.js)** - Standard script for converting Google Docs to PDF
-2. **[high_res_script.js](high_res_script.js)** - Enhanced script for high-resolution PDF conversion
-3. **[bookmarklet.js](bookmarklet.js)** - Bookmarklet version to create a browser bookmark for easy access
-4. **[image_extractor.js](image_extractor.js)** - Script to extract individual page images
-
-Choose the script that best fits your needs based on the document quality and complexity.
-
-## Method 1: Using JavaScript (Console Method)
-
-This is the most reliable method that works even with heavily restricted documents.
-
-### Basic Method (Standard Quality)
+**How to use:**
 
 1. Open the view-only Google Doc in your browser
 2. Scroll through the entire document to ensure all pages are loaded
-3. Press F12 or right-click and select "Inspect" to open Developer Tools
-4. Click on the "Console" tab in Developer Tools
-5. Copy and paste the code from our [script.js](script.js) file
-6. Press Enter to execute the code
-7. The document will be automatically converted and downloaded as a PDF
+3. Press F12 (or right-click anywhere and select "Inspect" from the menu)
+4. When a new panel opens, click on "Console" at the top
+5. Copy the code from the [script.js](script.js) file and paste it into the Console
+6. Press Enter and wait a few seconds for your PDF to download automatically!
 
-### High Resolution Method
+### 2. High-Resolution Converter
 
-For documents where quality is important:
+Enhanced tool for high-quality PDF conversion with better image quality.
 
-1. Follow steps 1-4 from the basic method
-2. Copy the code from [high_res_script.js](high_res_script.js) instead
-3. Press Enter to execute the code
-4. Wait for the high-resolution PDF to be generated (this may take longer)
+- Higher quality output
+- Better for documents with images and diagrams
+- Takes longer to process
 
-### Bookmarklet Method (Easiest)
+**How to use:**
 
-For the most convenience:
+1. Open the view-only Google Doc in your browser
+2. Use Ctrl/Cmd + "+" to zoom in for better quality (2-3 times)
+3. Scroll slowly through the entire document from top to bottom
+4. Press F12 (or right-click anywhere and select "Inspect")
+5. Click on "Console" at the top of the new panel
+6. Copy and paste the code from [high_res_script.js](high_res_script.js) into the Console
+7. Press Enter and wait patiently - this will take longer but give better quality!
+
+### 3. Bookmarklet (Easiest Method)
+
+Create a browser bookmark for one-click conversion.
+
+- Most convenient method
+- No need to open Developer Tools
+- Works directly from your bookmarks bar
+
+**Setup Instructions:**
 
 1. Create a new bookmark in your browser
-2. Name it "Save Google Doc to PDF" (or any name you prefer)
-3. Instead of a URL, paste the entire code from [bookmarklet.js](bookmarklet.js)
-4. When viewing a Google Doc, simply click the bookmark to convert it to PDF
+2. Name it "Save Google Doc to PDF"
+3. Instead of a URL, paste the entire code from the [bookmarklet.js](bookmarklet.js) file
+4. When viewing a Google Doc, click the bookmark to convert it to PDF
 
-### Image Extraction Method
+### 4. Image Extractor
 
-If you prefer individual page images:
+Extract individual page images instead of creating a PDF.
 
-1. Follow steps 1-4 from the basic method
-2. Copy the code from [image_extractor.js](image_extractor.js)
-3. Press Enter to execute the code
-4. Each page will be downloaded as a separate PNG image
+- Highest possible quality
+- Each page is saved as a separate PNG image
+- Good for documents with specific formatting
 
-### How it works:
+**How to use:**
 
-The JavaScript code extracts the document content by:
-1. Identifying all image elements (Google renders pages as images in view-only mode)
-2. Creating a canvas to capture each page
-3. Converting the canvas content to a PDF
-4. Downloading the compiled PDF to your device
+1. Open the view-only Google Doc in your browser
+2. Scroll through the entire document to load all pages
+3. Open Developer Tools (F12) and go to Console tab
+4. Copy and paste the code from [image_extractor.js](image_extractor.js)
+5. Each page will download as a separate PNG file
 
-## Method 2: Using Print to PDF
+## Additional Methods
 
-This method works for documents with less restrictive settings:
+### Print to PDF Method
+
+For documents with less restrictive settings:
 
 1. Open the view-only Google Doc
 2. Press Ctrl + P (Windows) or Cmd + P (Mac)
@@ -102,123 +94,248 @@ This method works for documents with less restrictive settings:
 
 Note: This method may be blocked in documents with printing disabled.
 
-## Method 3: Using Mobile Basic View
+### Mobile Basic View Method
 
-This method bypasses some restrictions by using Google's mobile view:
+This method uses Google's mobile view to bypass some restrictions:
 
-1. Open the view-only Google Doc in your web browser
-2. Edit the URL by replacing the ending (usually "edit" followed by other characters) with "mobilebasic"
-3. Press Enter to load the HTML preview version
-4. Right-click on the page and select "Save as"
-5. For "Save as type", select "Webpage, HTML Only" (important: other HTML types won't work)
-6. Save the file to your preferred location
-7. Open the downloaded HTML file in your browser
-8. Press Ctrl+P (Windows) or Command+P (Mac) to open the print dialog
-9. Select "Save as PDF" as your printer option
-10. Click "Save" to create your PDF
+1. Open the view-only Google Doc in your browser
+2. In the URL bar, replace "edit" at the end with "mobilebasic"
+3. Press Enter to load the new URL
+4. Right-click and select "Save as" > "Webpage, HTML Only"
+5. Open the HTML file in your browser
+6. Print to PDF (Ctrl/Cmd + P)
 
-**Note:** This method will not notify the document owner or anyone who shared it that you have downloaded the file.
-
-### Additional Technique
-
-Additional technique for copying text from view-only Google Docs: Open the document in mobile view by changing the URL to end with "mobilebasic", save as HTML, then open in browser to select and copy text without restrictions. This bypasses copy protection while maintaining formatting.
-
-## Method 4: Using HTML Download and Convert
+### HTML Download and Convert Method
 
 For documents that allow HTML downloads:
 
-1. Open the view-only Google Doc in your browser
+1. Open the view-only Google Doc
 2. Click on "File" > "Download" > "Web Page (.html, zipped)"
 3. Extract the downloaded ZIP file
-4. Open the extracted HTML file in your web browser
-5. Use the browser's print function (Ctrl + P or Cmd + P)
-6. Select "Save as PDF" in the printer options
-7. Choose your save location and click "Save"
-
-## Step-by-Step Visual Guide
-
-### Converting a View-Only Google Doc Using JavaScript
-
-#### 1. Open the view-only Google Doc
-
-First, open the view-only Google Doc in your browser. You'll know it's view-only if you see a message like "Viewer" or "View only" in the top right corner.
-
-#### 2. Scroll through the entire document
-
-Make sure to scroll all the way to the bottom of the document to ensure all pages are loaded. This is crucial for the script to capture all pages.
-
-#### 3. Open Developer Tools
-
-Right-click anywhere on the page and select "Inspect" or press F12 to open Developer Tools.
-
-#### 4. Navigate to the Console tab
-
-Click on the "Console" tab in the Developer Tools panel.
-
-#### 5. Paste the script
-
-Copy the entire code from the [script.js](script.js) file and paste it into the console.
-
-#### 6. Execute the script
-
-Press Enter to run the script. You'll see status messages in the console as the script processes each page.
-
-#### 7. Download the PDF
-
-The PDF will be automatically downloaded to your default download location. The filename will be based on the document title.
-
-### Creating a Bookmarklet for One-Click Conversion
-
-#### 1. Create a new bookmark
-
-In Chrome: Click the three dots menu → Bookmarks → Bookmark Manager → Right-click on the bookmarks bar → Add Page
-
-In Firefox: Right-click on the bookmarks bar → New Bookmark
-
-#### 2. Set up the bookmark
-
-- Name: "Save Google Doc to PDF" (or any name you prefer)
-- URL/Location: Paste the entire code from [bookmarklet.js](bookmarklet.js)
-
-#### 3. Save the bookmark
-
-Click Save or Add to create the bookmark.
-
-#### 4. Use the bookmarklet
-
-When viewing a Google Doc, simply click the bookmark to start the conversion process.
+4. Open the HTML file in your browser
+5. Use the print function (Ctrl + P or Cmd + P)
+6. Select "Save as PDF"
+7. Save your file
 
 ## Tips and Troubleshooting
 
-- **Missing pages**: If some pages are missing in the PDF, make sure to scroll through the entire document before applying the JavaScript method
-- **Low quality**: For better quality, use the high-resolution script or zoom in on the document before converting
-- **Document too large**: For very large documents, try processing them in sections or use the image extraction method
-- **Browser compatibility**: These scripts work best in Chrome or Firefox
-- **Permission issues**: None of these methods notify document owners or bypass legal access restrictions
-- **Error handling**: If you get errors about "trustedTypes", try using one of the alternative scripts
-- **Large documents**: For documents with hundreds of pages, you may need to scroll slowly to ensure all pages load
-- **Image quality**: PNG extraction provides better quality than PDF conversion but results in multiple files
-- **Copying text**: You can extract text from downloaded Google Docs by opening the HTML version and using standard copy functions
+- **Missing pages?** Scroll through the entire document before running any script
+- **Want better quality?** Use the high-resolution script or zoom in before converting
+- **Document too large?** Try processing in sections or use the image extraction method
+- **Best browsers to use:** Chrome or Firefox work best with these methods
+- **Getting errors?** Try a different method from the options above
 
-## Multilingual Support
+## <a name="vietnamese"></a>Công Cụ Chuyển Đổi Google Doc sang PDF
 
-Our web interface includes support for multiple languages:
+Trang này cung cấp các công cụ để chuyển đổi tài liệu Google Docs chỉ xem sang định dạng PDF. Hãy chọn phương pháp phù hợp nhất với tài liệu và yêu cầu cụ thể của bạn.
 
-- English (default)
-- Vietnamese (Tiếng Việt)
-- French (Français)
-- Spanish (Español)
-- Chinese (中文)
+**Lưu ý:** Các công cụ này được thiết kế cho mục đích sử dụng cá nhân hợp pháp, chẳng hạn như tạo bản sao ngoại tuyến của tài liệu mà bạn có quyền truy cập.
 
-The language can be changed using the selector in the top-right corner of the web interface.
+### Các Công Cụ Có Sẵn
+
+#### 1. Công Cụ Chuyển Đổi PDF Tiêu Chuẩn
+
+Công cụ cơ bản để chuyển đổi tài liệu Google Doc chỉ xem sang PDF.
+
+- Chuyển đổi nhanh
+- Hoạt động với hầu hết các tài liệu chỉ xem
+- Chất lượng đầu ra tiêu chuẩn
+
+**Cách sử dụng:**
+
+1. Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn
+2. Cuộn qua toàn bộ tài liệu từ trên xuống dưới để đảm bảo tất cả được tải
+3. Nhấn phím F12 (hoặc nhấp chuột phải và chọn "Kiểm tra" từ menu)
+4. Khi một bảng mới mở ra, nhấp vào "Console" ở phía trên
+5. Sao chép mã từ tệp [script.js](script.js) và dán vào Console
+6. Nhấn Enter và đợi vài giây để PDF của bạn tự động tải xuống!
+
+**Cách sử dụng (hướng dẫn chi tiết):**
+
+1. **Bước 1:** Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox
+2. **Bước 2:** Cuộn qua toàn bộ tài liệu từ trên xuống dưới để đảm bảo tất cả được tải (cuộn chậm qua mỗi trang)
+3. **Bước 3:** Nhấn phím F12 trên bàn phím
+4. **Bước 4:** Khi một cửa sổ mới hiện ra bên phải màn hình, nhấp vào tab "Console" ở hàng trên cùng của cửa sổ đó
+5. **Bước 5:**
+   - Trước tiên, tải tệp script.js từ repository này
+   - Mở file script.js đã tải về bằng Notepad hoặc bất kỳ trình soạn thảo văn bản nào
+   - Chọn tất cả nội dung trong file (Ctrl+A), sau đó sao chép (Ctrl+C)
+6. **Bước 6:** Quay lại tab Console, nhấp vào vùng trống và dán mã (Ctrl+V)
+7. **Bước 7:** Nhấn Enter và đợi vài giây
+8. **Bước 8:** Trình duyệt sẽ tự động tải xuống tệp PDF của bạn. Tìm nó trong thư mục Downloads trên máy tính của bạn.
+
+*Lưu ý: Nếu bạn không thấy tab Console, hãy nhấp vào dấu >> ở hàng trên cùng để hiển thị tất cả các tab.*
+
+#### 2. Công Cụ Chuyển Đổi Độ Phân Giải Cao
+
+Công cụ nâng cao cho việc chuyển đổi PDF chất lượng cao với hình ảnh tốt hơn.
+
+- Chất lượng đầu ra cao hơn
+- Tốt hơn cho các tài liệu có hình ảnh và sơ đồ
+- Mất nhiều thời gian xử lý hơn
+
+**Cách sử dụng:**
+
+1. Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn
+2. Sử dụng Ctrl/Cmd + "+" để phóng to để có chất lượng tốt hơn (2-3 lần)
+3. Cuộn chậm qua toàn bộ tài liệu từ trên xuống dưới
+4. Nhấn phím F12 (hoặc nhấp chuột phải và chọn "Kiểm tra")
+5. Nhấp vào "Console" ở phía trên của bảng mới
+6. Sao chép và dán mã từ tệp [high_res_script.js](high_res_script.js) vào Console
+7. Nhấn Enter và chờ đợi kiên nhẫn - quá trình này sẽ mất nhiều thời gian hơn nhưng cho chất lượng tốt hơn!
+
+**Cách sử dụng (hướng dẫn chi tiết):**
+
+1. **Bước 1:** Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox
+2. **Bước 2:** Phóng to tài liệu để có chất lượng cao hơn bằng cách:
+   - Nhấn và giữ phím Ctrl trên bàn phím
+   - Đồng thời nhấn phím + (dấu cộng) 2-3 lần
+   - Bạn sẽ thấy tài liệu phóng to hơn
+3. **Bước 3:** Cuộn THẬT CHẬM qua toàn bộ tài liệu từ trên xuống dưới, đảm bảo mỗi trang đều được tải hoàn toàn
+4. **Bước 4:** Nhấn phím F12 trên bàn phím
+5. **Bước 5:** Khi một cửa sổ mới hiện ra bên phải màn hình, nhấp vào tab "Console" ở hàng trên cùng
+6. **Bước 6:**
+   - Tải về file high_res_script.js từ repository này
+   - Mở file đã tải bằng Notepad hoặc bất kỳ trình soạn thảo văn bản nào
+   - Chọn tất cả văn bản (Ctrl+A), sau đó sao chép (Ctrl+C)
+7. **Bước 7:** Quay lại tab Console, nhấp vào vùng trống và dán mã đã sao chép (Ctrl+V)
+8. **Bước 8:** Nhấn Enter và đợi - quá trình này sẽ mất nhiều thời gian hơn phương pháp 1 (từ 30 giây đến vài phút tùy thuộc vào độ dài của tài liệu)
+9. **Bước 9:** Trình duyệt sẽ tự động tải xuống tệp PDF. Kiểm tra thư mục Downloads trên máy tính của bạn.
+
+*Lưu ý: Phương pháp này tạo ra PDF chất lượng cao hơn nhưng mất nhiều thời gian hơn. Hãy kiên nhẫn chờ đợi.*
+
+#### 3. Bookmarklet (Phương Pháp Đơn Giản Nhất)
+
+Tạo một bookmark trình duyệt để chuyển đổi bằng một cú nhấp chuột.
+
+- Phương pháp thuận tiện nhất
+- Không cần mở Developer Tools
+- Hoạt động trực tiếp từ thanh bookmarks của bạn
+
+**Hướng Dẫn Cài Đặt:**
+
+1. Tạo một bookmark mới trong trình duyệt của bạn
+2. Đặt tên là "Lưu Google Doc sang PDF"
+3. Thay vì URL, dán toàn bộ mã từ tệp [bookmarklet.js](bookmarklet.js)
+4. Khi xem Google Doc, nhấp vào bookmark để chuyển đổi
+
+**Hướng Dẫn Cài Đặt (chi tiết):**
+
+1. **Bước 1:** Đầu tiên, hãy bật thanh bookmark trong trình duyệt:
+   - Trong Chrome: Nhấp vào ba chấm ở góc trên bên phải > Chọn Bookmarks > Hiển thị thanh bookmark
+   - Trong Firefox: Nhấp chuột phải vào thanh trên cùng > Chọn Thanh Bookmark
+2. **Bước 2:** Tải tệp bookmarklet.js từ repository này
+3. **Bước 3:** Mở tệp vừa tải về bằng Notepad (nhấp chuột phải vào tệp > Chọn Open with > Notepad)
+4. **Bước 4:** Chọn và sao chép tất cả nội dung trong tệp (Ctrl+A để chọn tất cả, sau đó Ctrl+C để sao chép)
+5. **Bước 5:** Tạo bookmark mới:
+   - Nhấp chuột phải vào thanh bookmark > Chọn "Thêm trang" hoặc "Add page"
+   - Hoặc bạn cũng có thể nhấn Ctrl+D để mở hộp thoại thêm bookmark
+6. **Bước 6:** Trong hộp thoại bookmark:
+   - Đặt tên là "Lưu Google Doc sang PDF" (hoặc bất kỳ tên nào bạn dễ nhớ)
+   - Trong trường URL hoặc địa chỉ, xóa nội dung hiện tại và dán mã bạn đã sao chép (Ctrl+V)
+   - Nhấp "Lưu" hoặc "Save"
+7. **Bước 7:** Bây giờ, mỗi khi bạn đang xem một Google Doc:
+   - Đảm bảo bạn đã cuộn qua toàn bộ tài liệu một lần
+   - Nhấp vào bookmark "Lưu Google Doc sang PDF" bạn vừa tạo
+   - Tài liệu PDF sẽ được tạo và tải xuống tự động
+
+*Lưu ý: Đây là phương pháp đơn giản nhất vì bạn chỉ cần cài đặt một lần và sau đó có thể dùng lại nhiều lần chỉ với một cú nhấp chuột.*
+
+#### 4. Công Cụ Trích Xuất Hình Ảnh
+
+Trích xuất hình ảnh từng trang thay vì tạo tệp PDF.
+
+- Chất lượng cao nhất có thể
+- Mỗi trang được lưu dưới dạng hình ảnh PNG riêng biệt
+- Tốt cho các tài liệu có định dạng đặc biệt
+
+**Cách sử dụng:**
+
+1. Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn
+2. Cuộn qua toàn bộ tài liệu để tải tất cả các trang
+3. Mở Developer Tools (F12) và chuyển đến tab Console
+4. Sao chép và dán mã từ tệp [image_extractor.js](image_extractor.js)
+5. Mỗi trang sẽ được tải xuống dưới dạng tệp PNG riêng biệt
+
+**Cách sử dụng (hướng dẫn chi tiết):**
+
+1. **Bước 1:** Mở tài liệu Google Doc chỉ xem trong trình duyệt Chrome hoặc Firefox
+2. **Bước 2:** Cuộn chậm qua toàn bộ tài liệu từ đầu đến cuối để đảm bảo tất cả các trang đều được tải hoàn toàn
+3. **Bước 3:** Mở Developer Tools bằng cách nhấn phím F12 trên bàn phím
+4. **Bước 4:** Trong bảng điều khiển mới hiện ra, nhấp vào tab "Console" ở hàng trên cùng
+   - Nếu bạn không thấy tab Console, hãy nhấp vào biểu tượng >> để hiển thị thêm tab
+5. **Bước 5:** Tải và sử dụng script:
+   - Tải tệp image_extractor.js từ repository này
+   - Mở file bằng Notepad (nhấp chuột phải > Open with > Notepad)
+   - Chọn tất cả nội dung (Ctrl+A) và sao chép (Ctrl+C)
+6. **Bước 6:** Quay lại tab Console trong trình duyệt, nhấp vào vùng trống, và dán mã vừa sao chép (Ctrl+V)
+7. **Bước 7:** Nhấn Enter và đợi trong khi script chạy
+8. **Bước 8:** Trình duyệt sẽ tải xuống mỗi trang dưới dạng một file PNG riêng biệt
+   - Bạn có thể được yêu cầu cho phép tải nhiều file cùng lúc - hãy nhấp "Allow" hoặc "Cho phép"
+9. **Bước 9:** Kiểm tra thư mục Downloads để tìm tất cả các tệp hình ảnh
+
+*Lưu ý: Phương pháp này tạo ra nhiều file hình ảnh riêng biệt thay vì một tệp PDF duy nhất. Đây là cách tốt nhất để có được chất lượng cao nhất.*
+
+### Các Phương Pháp Bổ Sung
+
+#### Phương Pháp In sang PDF
+
+Cho các tài liệu có cài đặt ít hạn chế hơn:
+
+1. Mở tài liệu Google Doc chỉ xem
+2. Nhấn Ctrl + P (Windows) hoặc Cmd + P (Mac)
+3. Trong tùy chọn máy in, chọn "Lưu dưới dạng PDF" hoặc "Save as PDF"
+4. Chọn vị trí lưu mong muốn
+5. Nhấp vào "Lưu" hoặc "Save"
+
+*Lưu ý: Phương pháp này có thể bị chặn trong các tài liệu có tính năng in bị vô hiệu hóa.*
+
+#### Phương Pháp Chế Độ Xem Di Động Cơ Bản
+
+Phương pháp này sử dụng chế độ xem di động của Google để vượt qua một số hạn chế:
+
+1. Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn
+2. Trong thanh địa chỉ, thay thế phần cuối (thường là "edit") bằng "mobilebasic"
+3. Nhấn Enter để tải URL mới
+4. Nhấp chuột phải và chọn "Lưu dưới dạng" > "Trang web, Chỉ HTML"
+5. Mở tệp HTML trong trình duyệt của bạn
+6. In sang PDF (Ctrl/Cmd + P)
+
+#### Phương Pháp Tải xuống HTML và Chuyển đổi
+
+Đối với tài liệu cho phép tải xuống HTML:
+
+1. Mở tài liệu Google Doc chỉ xem
+2. Nhấp vào "Tệp" hoặc "File" > "Tải xuống" hoặc "Download" > "Trang web (.html, nén)"
+3. Giải nén tệp ZIP đã tải xuống
+4. Mở tệp HTML trong trình duyệt của bạn
+5. Sử dụng chức năng in (Ctrl + P hoặc Cmd + P)
+6. Chọn "Lưu dưới dạng PDF"
+7. Lưu tệp của bạn
+
+### Mẹo và Xử Lý Sự Cố
+
+- **Thiếu trang?** Cuộn qua toàn bộ tài liệu trước khi chạy bất kỳ script nào
+- **Muốn chất lượng tốt hơn?** Sử dụng script độ phân giải cao hoặc phóng to trước khi chuyển đổi
+- **Tài liệu quá lớn?** Thử xử lý theo từng phần hoặc sử dụng phương pháp trích xuất hình ảnh
+- **Trình duyệt tốt nhất để sử dụng:** Chrome hoặc Firefox hoạt động tốt nhất với những phương pháp này
+- **Gặp lỗi?** Thử một phương pháp khác từ các tùy chọn trên
+
+## <a name="french"></a>Outils de Conversion de Google Doc en PDF
+
+[Placeholder for French translation]
+
+## <a name="spanish"></a>Herramientas de Conversión de Google Doc a PDF
+
+[Placeholder for Spanish translation]
+
+## <a name="chinese"></a>Google Doc 转 PDF 转换工具
+
+[Placeholder for Chinese translation]
 
 ## Credits
 
 This project was created by **Thành Nguyễn**.
-
-## Contributing
-
-Feel free to contribute to this project by submitting issues or pull requests.
 
 ## License
 
