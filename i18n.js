@@ -5,32 +5,59 @@
 
 // Load language preference from localStorage if available
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage) {
-        setLanguage(savedLanguage);
-    } else {
-        // Default to browser language if available, otherwise English
-        const browserLang = navigator.language || navigator.userLanguage;
-        const shortLang = browserLang.split('-')[0]; // Get language code without region (e.g., 'en' from 'en-US')
-        
-        if (['en', 'vi', 'fr', 'es', 'zh'].includes(shortLang)) {
-            setLanguage(shortLang);
-            // Update the selector to match
-            const selector = document.getElementById('language-select');
-            if (selector) {
-                selector.value = shortLang;
-            }
-        } else {
-            // Default to English if browser language not supported
-            setLanguage('en');
-        }
-    }
+    console.log("DOM loaded, initializing language settings");
     
-    // Add event listener to the language selector
-    const selector = document.getElementById('language-select');
-    if (selector) {
-        selector.addEventListener('change', function() {
-            setLanguage(this.value);
+    // Set default to English first to ensure something is displayed
+    const defaultLang = 'en';
+    
+    try {
+        // First make sure English is active by default
+        const englishContent = document.querySelectorAll('[lang="en"]');
+        englishContent.forEach(element => {
+            element.classList.add('active');
+        });
+        
+        // Then try to load saved preference
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            console.log("Found saved language preference: " + savedLanguage);
+            setLanguage(savedLanguage);
+        } else {
+            // Default to browser language if available, otherwise English
+            const browserLang = navigator.language || navigator.userLanguage;
+            console.log("Browser language detected: " + browserLang);
+            const shortLang = browserLang.split('-')[0]; // Get language code without region (e.g., 'en' from 'en-US')
+            
+            if (['en', 'vi', 'fr', 'es', 'zh'].includes(shortLang)) {
+                console.log("Setting language to: " + shortLang);
+                setLanguage(shortLang);
+            } else {
+                // Default to English if browser language not supported
+                console.log("Unsupported language, defaulting to English");
+                setLanguage(defaultLang);
+            }
+        }
+        
+        // Add event listener to the language selector
+        const selector = document.getElementById('language-select');
+        if (selector) {
+            selector.addEventListener('change', function() {
+                console.log("Language changed to: " + this.value);
+                setLanguage(this.value);
+            });
+            
+            // Make sure the selector displays the correct language
+            const currentLang = document.documentElement.lang || defaultLang;
+            selector.value = currentLang;
+        } else {
+            console.error("Language selector element not found!");
+        }
+    } catch (error) {
+        console.error("Error initializing language settings: ", error);
+        // Ensure at least English content is visible
+        const englishContent = document.querySelectorAll('[lang="en"]');
+        englishContent.forEach(element => {
+            element.classList.add('active');
         });
     }
 });
@@ -40,29 +67,37 @@ document.addEventListener('DOMContentLoaded', function() {
  * @param {string} lang - Language code ('en', 'vi', 'fr', 'es', 'zh')
  */
 function setLanguage(lang) {
-    // Hide all language content
-    const allContent = document.querySelectorAll('[lang]');
-    allContent.forEach(element => {
-        element.classList.remove('active');
-    });
-    
-    // Show content for selected language
-    const selectedContent = document.querySelectorAll('[lang="' + lang + '"]');
-    selectedContent.forEach(element => {
-        element.classList.add('active');
-    });
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // Update the language selector value
-    const selector = document.getElementById('language-select');
-    if (selector) {
-        selector.value = lang;
+    try {
+        console.log("Setting language to: " + lang);
+        
+        // Hide all language content
+        const allContent = document.querySelectorAll('[lang]');
+        allContent.forEach(element => {
+            element.classList.remove('active');
+        });
+        
+        // Show content for selected language
+        const selectedContent = document.querySelectorAll('[lang="' + lang + '"]');
+        selectedContent.forEach(element => {
+            element.classList.add('active');
+        });
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // Update the language selector value
+        const selector = document.getElementById('language-select');
+        if (selector) {
+            selector.value = lang;
+        }
+        
+        // Save preference to localStorage
+        localStorage.setItem('preferredLanguage', lang);
+        
+        console.log("Language set successfully to: " + lang);
+    } catch (error) {
+        console.error("Error setting language: ", error);
     }
-    
-    // Save preference to localStorage
-    localStorage.setItem('preferredLanguage', lang);
 }
 
 /**
