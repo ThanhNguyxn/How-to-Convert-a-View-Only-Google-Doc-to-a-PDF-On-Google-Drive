@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Doc to PDF Converter Tools</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1a73e8;
+            margin-top: 30px;
+        }
+        .tool-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tool-card h3 {
+            margin-top: 0;
+            color: #1a73e8;
+        }
+        .tool-card ul {
+            padding-left: 20px;
+        }
+        .tool-card pre {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #0d5bdd;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .text-guide {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1a73e8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .bonus-content {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .step-by-step {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #4caf50;
+        }
+        .step-number {
+            display: inline-block;
+            background-color: #4caf50;
+            color: white;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        /* Language selector styles */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .language-selector select {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 14px;
+        }
+        /* Content display for language switching */
+        [lang]:not(.active) {
+            display: none;
+        }
+        [lang].active {
+            display: block;
+        }
+        .credits {
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+        .video-reference {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+    <!-- Include internationalization script -->
+    <script src="i18n.js"></script>
+</head>
+<body>
+    <div class="language-selector">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
+
+    <div lang="en">
+        <h1>Google Doc to PDF Converter Tools</h1>
+        <p>
+            This page provides tools to convert view-only Google Docs to PDF format.
+            Choose the method that works best for your specific document and requirements.
+        </p>
+        <div class="warning">
+            <strong>Note:</strong> These tools are intended for legitimate personal use, such as creating offline copies of documents you have access to.
+        </div>
+        <h2>Available Tools</h2>
+    </div>
+
+    <div lang="vi">
+        <h1>Công Cụ Chuyển Đổi Google Doc sang PDF</h1>
+        <p>
+            Trang này cung cấp các công cụ để chuyển đổi tài liệu Google Docs chỉ xem sang định dạng PDF.
+            Hãy chọn phương pháp phù hợp nhất với tài liệu và yêu cầu cụ thể của bạn.
+        </p>
+        <div class="warning">
+            <strong>Lưu ý:</strong> Các công cụ này được thiết kế cho mục đích sử dụng cá nhân hợp pháp, chẳng hạn như tạo bản sao ngoại tuyến của tài liệu mà bạn có quyền truy cập.
+        </div>
+        <h2>Các Công Cụ Có Sẵn</h2>
+    </div>
+
+    <div lang="fr">
+        <h1>Outils de Conversion de Google Doc en PDF</h1>
+        <p>
+            Cette page fournit des outils pour convertir les documents Google Docs en mode lecture seule au format PDF.
+            Choisissez la méthode qui convient le mieux à votre document et à vos besoins spécifiques.
+        </p>
+        <div class="warning">
+            <strong>Remarque:</strong> Ces outils sont destinés à un usage personnel légitime, comme la création de copies hors ligne de documents auxquels vous avez accès.
+        </div>
+        <h2>Outils Disponibles</h2>
+    </div>
+
+    <div lang="es">
+        <h1>Herramientas de Conversión de Google Doc a PDF</h1>
+        <p>
+            Esta página proporciona herramientas para convertir documentos de Google Docs de solo lectura a formato PDF.
+            Elija el método que mejor se adapte a su documento y requisitos específicos.
+        </p>
+        <div class="warning">
+            <strong>Nota:</strong> Estas herramientas están destinadas a un uso personal legítimo, como crear copias sin conexión de documentos a los que tiene acceso.
+        </div>
+        <h2>Herramientas Disponibles</h2>
+    </div>
+
+    <div lang="zh">
+        <h1>Google Doc 转 PDF 转换工具</h1>
+        <p>
+            此页面提供将只读 Google Docs 转换为 PDF 格式的工具。
+            请选择最适合您的文档和特定要求的方法。
+        </p>
+        <div class="warning">
+            <strong>注意：</strong> 这些工具适用于合法的个人用途，例如创建您有权访问的文档的离线副本。
+        </div>
+        <h2>可用工具</h2>
+    </div>
+    
+    <!-- Tool cards section - this will be enhanced to support multiple languages -->
+    <div class="tool-card">
+        <div lang="en">
+            <h3>1. Standard PDF Converter</h3>
+            <p>Basic tool to convert a view-only Google Doc to PDF.</p>
+            <ul>
+                <li>Fast conversion</li>
+                <li>Works with most view-only documents</li>
+                <li>Standard quality output</li>
+            </ul>
+            <p><a href="script.js" class="button" download>Download Script</a></p>
+            <div>
+                <h4>How to use:</h4>
+                <ol>
+                    <li>Open the view-only Google Doc in your browser</li>
+                    <li>Scroll through the entire document to ensure all pages are loaded</li>
+                    <li>Press F12 or right-click and select "Inspect" to open Developer Tools</li>
+                    <li>Click on the "Console" tab</li>
+                    <li>Copy and paste the code from the downloaded script</li>
+                    <li>Press Enter to execute and download the PDF</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div lang="vi">
+            <h3>1. Công Cụ Chuyển Đổi PDF Tiêu Chuẩn</h3>
+            <p>Công cụ cơ bản để chuyển đổi tài liệu Google Doc chỉ xem sang PDF.</p>
+            <ul>
+                <li>Chuyển đổi nhanh</li>
+                <li>Hoạt động với hầu hết các tài liệu chỉ xem</li>
+                <li>Chất lượng đầu ra tiêu chuẩn</li>
+            </ul>
+            <p><a href="script.js" class="button" download>Tải Script</a></p>
+            <div>
+                <h4>Cách sử dụng:</h4>
+                <ol>
+                    <li>Mở tài liệu Google Doc chỉ xem trong trình duyệt của bạn</li>
+                    <li>Cuộn qua toàn bộ tài liệu để đảm bảo tất cả các trang được tải</li>
+                    <li>Nhấn F12 hoặc nhấp chuột phải và chọn "Kiểm tra" để mở Công Cụ Phát Triển</li>
+                    <li>Nhấp vào tab "Console"</li>
+                    <li>Sao chép và dán mã từ script đã tải xuống</li>
+                    <li>Nhấn Enter để thực thi và tải xuống PDF</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div lang="fr">
+            <h3>1. Convertisseur PDF Standard</h3>
+            <p>Outil de base pour convertir un Google Doc en mode lecture seule au format PDF.</p>
+            <ul>
+                <li>Conversion rapide</li>
+                <li>Fonctionne avec la plupart des documents en lecture seule</li>
+                <li>Qualité de sortie standard</li>
+            </ul>
+            <p><a href="script.js" class="button" download>Télécharger le Script</a></p>
+            <div>
+                <h4>Comment utiliser:</h4>
+                <ol>
+                    <li>Ouvrez le Google Doc en lecture seule dans votre navigateur</li>
+                    <li>Faites défiler tout le document pour vous assurer que toutes les pages sont chargées</li>
+                    <li>Appuyez sur F12 ou faites un clic droit et sélectionnez "Inspecter" pour ouvrir les Outils de Développement</li>
+                    <li>Cliquez sur l'onglet "Console"</li>
+                    <li>Copiez et collez le code du script téléchargé</li>
+                    <li>Appuyez sur Entrée pour exécuter et télécharger le PDF</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div lang="es">
+            <h3>1. Convertidor PDF Estándar</h3>
+            <p>Herramienta básica para convertir un Google Doc de solo lectura a PDF.</p>
+            <ul>
+                <li>Conversión rápida</li>
+                <li>Funciona con la mayoría de los documentos de solo lectura</li>
+                <li>Calidad de salida estándar</li>
+            </ul>
+            <p><a href="script.js" class="button" download>Descargar Script</a></p>
+            <div>
+                <h4>Cómo usar:</h4>
+                <ol>
+                    <li>Abra el Google Doc de solo lectura en su navegador</li>
+                    <li>Desplácese por todo el documento para asegurarse de que se carguen todas las páginas</li>
+                    <li>Presione F12 o haga clic derecho y seleccione "Inspeccionar" para abrir las Herramientas de Desarrollo</li>
+                    <li>Haga clic en la pestaña "Consola"</li>
+                    <li>Copie y pegue el código del script descargado</li>
+                    <li>Presione Enter para ejecutar y descargar el PDF</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div lang="zh">
+            <h3>标准 PDF 转换器</h3>
+            <p>将只读 Google Doc 转换为 PDF 的基本工具。</p>
+            <ul>
+                <li>快速转换</li>
+                <li>适用于大多数只读文档</li>
+                <li>标准质量输出</li>
+            </ul>
+            <p><a href="script.js" class="button" download>下载脚本</a></p>
+            <div>
+                <h4>使用方法：</h4>
+                <ol>
+                    <li>在浏览器中打开只读 Google Doc</li>
+                    <li>滚动浏览整个文档以确保加载所有页面</li>
+                    <li>按 F12 或右键单击并选择"检查"以打开开发者工具</li>
+                    <li>点击"控制台"选项卡</li>
+                    <li>复制并粘贴下载的脚本代码</li>
+                    <li>按 Enter 执行并下载 PDF</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tool-card">
+        <h3>2. High-Resolution Converter</h3>
+        <p>Enhanced tool for high-quality PDF conversion with better image quality.</p>
+        <ul>
+            <li>Higher quality output</li>
+            <li>Better for documents with images and diagrams</li>
+            <li>Takes longer to process</li>
+        </ul>
+        <p><a href="high_res_script.js" class="button" download>Download Script</a></p>
+        <div>
+            <h4>How to use:</h4>
+            <ol>
+                <li>Open the view-only Google Doc in your browser</li>
+                <li>Zoom in for better quality (Ctrl/Cmd +)</li>
+                <li>Scroll through the entire document to load all pages</li>
+                <li>Open Developer Tools (F12) and go to Console tab</li>
+                <li>Copy and paste the high-resolution script</li>
+                <li>Wait for the processing to complete (may take longer)</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="tool-card">
+        <h3>3. Bookmarklet (Easiest Method)</h3>
+        <p>Create a browser bookmark for one-click conversion.</p>
+        <ul>
+            <li>Most convenient method</li>
+            <li>No need to open Developer Tools</li>
+            <li>Works directly from your bookmarks bar</li>
+        </ul>
+        <p><a href="bookmarklet.js" class="button" download>Download Bookmarklet Code</a></p>
+        <div>
+            <h4>Setup Instructions:</h4>
+            <ol>
+                <li>Create a new bookmark in your browser</li>
+                <li>Name it "Save Google Doc to PDF"</li>
+                <li>Instead of a URL, paste the entire code from the bookmarklet file</li>
+                <li>When viewing a Google Doc, click the bookmark to convert</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="tool-card">
+        <h3>4. Image Extractor</h3>
+        <p>Extract individual page images instead of creating a PDF.</p>
+        <ul>
+            <li>Highest possible quality</li>
+            <li>Each page is saved as a separate PNG image</li>
+            <li>Good for documents with specific formatting</li>
+        </ul>
+        <p><a href="image_extractor.js" class="button" download>Download Script</a></p>
+        <div>
+            <h4>How to use:</h4>
+            <ol>
+                <li>Open the view-only Google Doc in your browser</li>
+                <li>Scroll through the entire document to load all pages</li>
+                <li>Open Developer Tools (F12) and go to Console tab</li>
+                <li>Copy and paste the image extractor script</li>
+                <li>Each page will download as a separate PNG file</li>
+            </ol>
+        </div>
+    </div>
+    
+    <h2>Additional Methods</h2>
+    
+    <div class="tool-card">
+        <h3>Print to PDF Method</h3>
+        <p>For documents with less restrictive settings.</p>
+        <ol>
+            <li>Open the view-only Google Doc</li>
+            <li>Press Ctrl + P (Windows) or Cmd + P (Mac)</li>
+            <li>In the printer options, select "Save as PDF"</li>
+            <li>Choose your desired save location</li>
+            <li>Click "Save"</li>
+        </ol>
+        <p><em>Note: This method may be blocked in documents with printing disabled.</em></p>
+    </div>
+    
+    <div class="tool-card">
+        <h3>Mobile Basic View Method</h3>
+        <p>Uses Google's mobile view to bypass some restrictions.</p>
+        <ol>
+            <li>Open the view-only Google Doc in your browser</li>
+            <li>In the URL bar, replace "edit" with "mobilebasic"</li>
+            <li>Press Enter to load the new URL</li>
+            <li>Right-click and select "Save as" > "Webpage, HTML Only"</li>
+            <li>Open the HTML file in your browser</li>
+            <li>Print to PDF (Ctrl/Cmd + P)</li>
+        </ol>
+    </div>
+    
+    <div class="tool-card">
+        <div lang="en">
+            <h3>Detailed Mobile Basic View Method</h3>
+            <p>A step-by-step guide to download view-only Google Docs:</p>
+            <ol>
+                <li>Open the view-only Google Doc in your web browser</li>
+                <li>Edit the URL by replacing the ending (usually "edit" followed by other characters) with "mobilebasic"</li>
+                <li>Press Enter to load the HTML preview version</li>
+                <li>Right-click on the page and select "Save as"</li>
+                <li>For "Save as type", select "Webpage, HTML Only" (important: other HTML types won't work)</li>
+                <li>Save the file to your preferred location</li>
+                <li>Open the downloaded HTML file in your browser</li>
+                <li>Press Ctrl+P (Windows) or Command+P (Mac) to open the print dialog</li>
+                <li>Select "Save as PDF" as your printer option</li>
+                <li>Click "Save" to create your PDF</li>
+            </ol>
+            <p><strong>Note:</strong> This method will not notify the document owner or anyone who shared it that you have downloaded the file.</p>
+            
+            <div class="video-reference">
+                <p>Additional technique for copying text from view-only Google Docs: Open the document in mobile view by changing the URL to end with "mobilebasic", save as HTML, then open in browser to select and copy text without restrictions. This bypasses copy protection while maintaining formatting.</p>
+            </div>
+        </div>
+        
+        <div lang="vi">
+            <h3>Phương Pháp Mobile Basic View Chi Tiết</h3>
+            <p>Hướng dẫn từng bước để tải xuống tài liệu Google Docs chỉ xem:</p>
+            <ol>
+                <li>Mở tài liệu Google Doc chỉ xem trong trình duyệt web của bạn</li>
+                <li>Chỉnh sửa URL bằng cách thay thế phần cuối (thường là "edit" và một số ký tự khác) bằng "mobilebasic"</li>
+                <li>Nhấn Enter để tải phiên bản xem trước HTML</li>
+                <li>Nhấp chuột phải vào trang và chọn "Lưu dưới dạng" hoặc "Save as"</li>
+                <li>Đối với "Save as type", chọn "Webpage, HTML Only" (quan trọng: các loại HTML khác sẽ không hoạt động)</li>
+                <li>Lưu tệp vào vị trí bạn muốn</li>
+                <li>Mở tệp HTML đã tải xuống trong trình duyệt của bạn</li>
+                <li>Nhấn Ctrl+P (Windows) hoặc Command+P (Mac) để mở hộp thoại in</li>
+                <li>Chọn "Lưu dưới dạng PDF" làm tùy chọn máy in của bạn</li>
+                <li>Nhấp vào "Lưu" để tạo PDF của bạn</li>
+            </ol>
+            <p><strong>Lưu ý:</strong> Phương pháp này sẽ không thông báo cho chủ sở hữu tài liệu hoặc bất kỳ ai đã chia sẻ tài liệu rằng bạn đã tải xuống tệp.</p>
+            
+            <div class="video-reference">
+                <p>Kỹ thuật bổ sung để sao chép văn bản từ tài liệu Google Docs chỉ xem: Mở tài liệu ở chế độ xem di động bằng cách thay đổi URL để kết thúc bằng "mobilebasic", lưu dưới dạng HTML, sau đó mở trong trình duyệt để chọn và sao chép văn bản mà không bị hạn chế. Điều này giúp bạn vượt qua bảo vệ sao chép trong khi vẫn giữ định dạng.</p>
+            </div>
+        </div>
+        
+        <div lang="fr">
+            <h3>Méthode Mobile Basic View Détaillée</h3>
+            <p>Guide étape par étape pour télécharger des documents Google Docs en lecture seule:</p>
+            <ol>
+                <li>Ouvrez le Google Doc en lecture seule dans votre navigateur web</li>
+                <li>Modifiez l'URL en remplaçant la fin (généralement "edit" suivi d'autres caractères) par "mobilebasic"</li>
+                <li>Appuyez sur Entrée pour charger la version aperçu HTML</li>
+                <li>Faites un clic droit sur la page et sélectionnez "Enregistrer sous"</li>
+                <li>Pour "Type de fichier", sélectionnez "Page Web, HTML uniquement" (important: les autres types HTML ne fonctionneront pas)</li>
+                <li>Enregistrez le fichier à l'emplacement de votre choix</li>
+                <li>Ouvrez le fichier HTML téléchargé dans votre navigateur</li>
+                <li>Appuyez sur Ctrl+P (Windows) ou Command+P (Mac) pour ouvrir la boîte de dialogue d'impression</li>
+                <li>Sélectionnez "Enregistrer au format PDF" comme option d'imprimante</li>
+                <li>Cliquez sur "Enregistrer" pour créer votre PDF</li>
+            </ol>
+            <p><strong>Remarque:</strong> Cette méthode ne notifiera pas le propriétaire du document ou toute personne l'ayant partagé que vous avez téléchargé le fichier.</p>
+            
+            <div class="video-reference">
+                <p>Technique supplémentaire pour copier du texte à partir de Google Docs en lecture seule: Ouvrez le document en vue mobile en changeant l'URL pour qu'elle se termine par "mobilebasic", enregistrez-le au format HTML, puis ouvrez-le dans le navigateur pour sélectionner et copier du texte sans restrictions. Cela contourne la protection contre la copie tout en conservant la mise en forme.</p>
+            </div>
+        </div>
+        
+        <div lang="es">
+            <h3>Método Detallado de Vista Básica Móvil</h3>
+            <p>Guía paso a paso para descargar documentos de Google Docs de solo lectura:</p>
+            <ol>
+                <li>Abra el Google Doc de solo lectura en su navegador web</li>
+                <li>Edite la URL reemplazando el final (generalmente "edit" seguido de otros caracteres) con "mobilebasic"</li>
+                <li>Presione Enter para cargar la versión de vista previa HTML</li>
+                <li>Haga clic derecho en la página y seleccione "Guardar como"</li>
+                <li>Para "Tipo de archivo", seleccione "Página web, solo HTML" (importante: otros tipos de HTML no funcionarán)</li>
+                <li>Guarde el archivo en su ubicación preferida</li>
+                <li>Abra el archivo HTML descargado en su navegador</li>
+                <li>Presione Ctrl+P (Windows) o Command+P (Mac) para abrir el diálogo de impresión</li>
+                <li>Seleccione "Guardar como PDF" como su opción de impresora</li>
+                <li>Haga clic en "Guardar" para crear su PDF</li>
+            </ol>
+            <p><strong>Nota:</strong> Este método no notificará al propietario del documento o a cualquier persona que lo haya compartido que ha descargado el archivo.</p>
+            
+            <div class="video-reference">
+                <p>Técnica adicional para copiar texto de documentos de Google Docs de solo lectura: Abra el documento en vista móvil cambiando la URL para que termine con "mobilebasic", guárdelo como HTML, luego ábralo en el navegador para seleccionar y copiar texto sin restricciones. Esto evita la protección de copia mientras mantiene el formato.</p>
+            </div>
+        </div>
+        
+        <div lang="zh">
+            <h3>详细的移动基本视图方法</h3>
+            <p>下载只读 Google 文档的分步指南：</p>
+            <ol>
+                <li>在网络浏览器中打开只读 Google 文档</li>
+                <li>通过将结尾（通常是"edit"后跟其他字符）替换为"mobilebasic"来编辑 URL</li>
+                <li>按 Enter 键加载 HTML 预览版本</li>
+                <li>右键单击页面并选择"另存为"</li>
+                <li>对于"保存类型"，选择"网页，仅 HTML"（重要：其他 HTML 类型将不起作用）</li>
+                <li>将文件保存到您喜欢的位置</li>
+                <li>在浏览器中打开下载的 HTML 文件</li>
+                <li>按 Ctrl+P（Windows）或 Command+P（Mac）打开打印对话框</li>
+                <li>选择"另存为 PDF"作为打印机选项</li>
+                <li>点击"保存"创建您的 PDF</li>
+            </ol>
+            <p><strong>注意：</strong>此方法不会通知文档所有者或共享者您已下载文件。</p>
+            
+            <div class="video-reference">
+                <p>从只读 Google 文档复制文本的其他技术：通过将 URL 更改为以"mobilebasic"结尾来以移动视图打开文档，保存为 HTML，然后在浏览器中打开以无限制地选择和复制文本。这样可以绕过复制保护，同时保持格式。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-guide">
+        <h3>Extracting Text from Downloaded Google Docs</h3>
+        <p>After downloading a Google Doc as HTML or PDF, you can extract and copy the text:</p>
+        <ol>
+            <li>For HTML files:
+                <ul>
+                    <li>Open the HTML file in your browser</li>
+                    <li>Select the text you want to copy (click and drag)</li>
+                    <li>Copy the selected text (Ctrl/Cmd + C)</li>
+                    <li>Paste into your preferred text editor</li>
+                </ul>
+            </li>
+            <li>For PDF files:
+                <ul>
+                    <li>Open the PDF in a PDF reader that supports text selection</li>
+                    <li>Use the text selection tool to select content</li>
+                    <li>Copy and paste into your document</li>
+                </ul>
+            </li>
+        </ol>
+        <p>This method allows you to extract and use the text content while preserving formatting.</p>
+        
+        <div class="bonus-content">
+            <strong>Bonus: Detailed Method for Copying Text from View-Only Google Docs</strong>
+            <div class="step-by-step">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Mở tài liệu Google Docs ở chế độ chỉ xem</strong>
+                    <p>Truy cập vào tài liệu Google Docs mà bạn chỉ có quyền xem (không có quyền sao chép hoặc tải xuống).</p>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Sử dụng phương thức Mobile Basic View</strong>
+                    <p>Thay đổi URL của tài liệu bằng cách thay thế phần cuối của URL (thường là "edit" hoặc một chuỗi ký tự) bằng "mobilebasic". Ví dụ: thay vì https://docs.google.com/document/d/ABCD1234/edit, hãy sửa thành https://docs.google.com/document/d/ABCD1234/mobilebasic</p>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Lưu trang dưới dạng HTML</strong>
+                    <p>Nhấp chuột phải vào trang và chọn "Lưu dưới dạng" hoặc "Save as". Đảm bảo chọn định dạng "Webpage, HTML Only" trong menu thả xuống.</p>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Mở file HTML đã tải về</strong>
+                    <p>Mở file HTML đã lưu bằng trình duyệt web của bạn (Chrome, Firefox, Edge, v.v.).</p>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Trích xuất văn bản</strong>
+                    <p>Bây giờ bạn có thể chọn văn bản dễ dàng bằng cách:</p>
+                    <ul>
+                        <li>Chọn tất cả văn bản: Nhấn Ctrl+A (Windows) hoặc Command+A (Mac)</li>
+                        <li>Hoặc chọn một phần văn bản bằng cách nhấp và kéo</li>
+                        <li>Sau đó nhấn Ctrl+C (Windows) hoặc Command+C (Mac) để sao chép</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Dán văn bản vào nơi bạn muốn sử dụng</strong>
+                    <p>Dán văn bản đã sao chép (Ctrl+V hoặc Command+V) vào trình soạn thảo văn bản, tài liệu Word, hoặc bất kỳ nơi nào bạn muốn.</p>
+                </div>
+            </div>
+            <p>Phương pháp này cho phép bạn trích xuất văn bản từ tài liệu chỉ xem mà không bị mất định dạng và không cần công cụ bổ sung.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div lang="en" class="active">
+            <p>
+                View the complete project and documentation on 
+                <a href="https://github.com/yourusername/How-to-Convert-a-View-Only-Google-Doc-to-a-PDF-On-Google-Drive" target="_blank">GitHub</a>.
+            </p>
+            <p>
+                Licensed under the MIT License.
+            </p>
+            <div class="credits">
+                <p>Created by Thành Nguyễn</p>
+            </div>
+        </div>
+        
+        <div lang="vi">
+            <p>
+                Xem dự án đầy đủ và tài liệu trên 
+                <a href="https://github.com/yourusername/How-to-Convert-a-View-Only-Google-Doc-to-a-PDF-On-Google-Drive" target="_blank">GitHub</a>.
+            </p>
+            <p>
+                Được cấp phép theo Giấy phép MIT.
+            </p>
+            <div class="credits">
+                <p>Được tạo bởi Thành Nguyễn</p>
+            </div>
+        </div>
+        
+        <div lang="fr">
+            <p>
+                Voir le projet complet et la documentation sur 
+                <a href="https://github.com/yourusername/How-to-Convert-a-View-Only-Google-Doc-to-a-PDF-On-Google-Drive" target="_blank">GitHub</a>.
+            </p>
+            <p>
+                Sous licence MIT.
+            </p>
+            <div class="credits">
+                <p>Créé par Thành Nguyễn</p>
+            </div>
+        </div>
+        
+        <div lang="es">
+            <p>
+                Ver el proyecto completo y la documentación en 
+                <a href="https://github.com/yourusername/How-to-Convert-a-View-Only-Google-Doc-to-a-PDF-On-Google-Drive" target="_blank">GitHub</a>.
+            </p>
+            <p>
+                Licenciado bajo la Licencia MIT.
+            </p>
+            <div class="credits">
+                <p>Creado por Thành Nguyễn</p>
+            </div>
+        </div>
+        
+        <div lang="zh">
+            <p>
+                在 <a href="https://github.com/yourusername/How-to-Convert-a-View-Only-Google-Doc-to-a-PDF-On-Google-Drive" target="_blank">GitHub</a> 上查看完整项目和文档。
+            </p>
+            <p>
+                根据 MIT 许可证授权。
+            </p>
+            <div class="credits">
+                <p>由 Thành Nguyễn 创建</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
